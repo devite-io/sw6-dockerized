@@ -1,0 +1,34 @@
+shopware:
+  auto_update:
+    enabled: false
+  admin_worker:
+    enable_admin_worker: false
+  api:
+    max_limit: 1000000
+    store:
+      max_limit: 500
+  mail:
+    update_mail_variables_on_send: false
+  redis:
+    connections:
+      persistent:
+        dsn: 'redis://valkey:6379/0'
+  increment:
+    user_activity:
+      type: 'redis'
+      config:
+        connection: 'persistent'
+    message_queue:
+      type: 'redis'
+      config:
+        connection: 'persistent'
+  cache:
+    cache_compression: true
+    cache_compression_method: 'zstd'
+  cart:
+    compress: true
+    compression_method: 'zstd'
+    storage:
+      type: 'redis'
+      config:
+        connection: 'persistent'

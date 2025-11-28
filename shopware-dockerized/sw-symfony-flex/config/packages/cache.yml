@@ -1,0 +1,5 @@
+framework:
+  cache:
+    app: cache.adapter.redis_tag_aware
+    system: cache.adapter.redis_tag_aware
+    default_redis_provider: 'redis://valkey:6379/0'

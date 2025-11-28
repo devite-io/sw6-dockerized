@@ -1,0 +1,2 @@
+# run scheduled Shopware tasks every 5 minutes
+*/5 * * * * nginx cd /usr/share/nginx/html && /usr/bin/php bin/console scheduled-task:run --no-wait >> /var/log/run-scheduled-task.log 2>&1

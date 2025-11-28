@@ -1,0 +1,65 @@
+services:
+  shopware:
+    container_name: sw6
+    build: shopware-dockerized
+    ports:
+      - "8080:80"
+    volumes:
+      - sw6-data:/usr/share/nginx/html:rw
+    links:
+      - database:sw6-database
+    networks: [sw6-network]
+    depends_on:
+      database:
+        condition: service_healthy
+  valkey:
+    container_name: sw6-valkey
+    image: valkey/valkey:alpine
+    command: [ "--maxmemory-policy", "volatile-lru", "--save", "", "--appendonly", "no" ]
+    ports:
+      - "6379:6379"
+    networks: [sw6-network]
+  opensearch:
+    container_name: sw6-opensearch
+    image: opensearchproject/opensearch:latest
+    environment:
+      discovery.type: single-node
+      plugins.security.disabled: true
+      OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_ADMIN_PASSWORD:-c3o_ZPHo!}
+    ports:
+      - "9200:9200"
+      - "9600:9600"
+    networks: [sw6-network]
+  database:
+    container_name: sw6-database
+    image: mariadb:lts
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-password}
+    volumes:
+      - sw6-db-data:/var/lib/mysql:rw
+    networks: [sw6-network]
+    healthcheck:
+      test: [ "CMD", "mariadb-admin" ,"ping", "-h", "localhost", "-p${MARIADB_ROOT_PASSWORD:-password}" ]
+      start_interval: 3s
+      start_period: 10s
+      interval: 5s
+      timeout: 1s
+      retries: 10
+  phpmyadmin:
+    container_name: sw6-phpmyadmin
+    image: phpmyadmin:latest
+    environment:
+      PMA_HOST: sw6-database
+      PMA_USER: root
+      PMA_PASSWORD: ${MARIADB_ROOT_PASSWORD:-password}
+    ports:
+      - "80:80"
+    networks: [sw6-network]
+
+networks:
+  sw6-network:
+    driver: bridge
+
+volumes:
+  sw6-data:
+  sw6-db-data:
