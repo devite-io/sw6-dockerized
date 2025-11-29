@@ -1,42 +1,75 @@
+name: sw6
 services:
   shopware:
-    container_name: sw6
     build: shopware-dockerized
     ports:
       - "8080:80"
     volumes:
-      - sw6-data:/usr/share/nginx/html:rw
-    links:
-      - database:sw6-database
+      - sw6-shopware-data:/usr/share/nginx/html:rw
     networks: [sw6-network]
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost" ]
+      start_interval: 3s
+      start_period: 5s
+      interval: 1s
+      timeout: 3s
+      retries: 10
     depends_on:
       database:
         condition: service_healthy
+      valkey:
+        condition: service_healthy
+      opensearch:
+        condition: service_healthy
   valkey:
-    container_name: sw6-valkey
     image: valkey/valkey:alpine
+    restart: always
     command: [ "--maxmemory-policy", "volatile-lru", "--save", "", "--appendonly", "no" ]
-    ports:
-      - "6379:6379"
     networks: [sw6-network]
+    healthcheck:
+      test: [ "CMD-SHELL", "valkey-cli ping | grep PONG" ]
+      start_interval: 3s
+      start_period: 5s
+      interval: 1s
+      timeout: 3s
+      retries: 10
   opensearch:
-    container_name: sw6-opensearch
     image: opensearchproject/opensearch:latest
+    restart: always
     environment:
       discovery.type: single-node
       plugins.security.disabled: true
       OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_ADMIN_PASSWORD:-c3o_ZPHo!}
-    ports:
-      - "9200:9200"
-      - "9600:9600"
     networks: [sw6-network]
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:9200/_cat/health" ]
+      start_interval: 5s
+      start_period: 10s
+      interval: 5s
+      timeout: 5s
+      retries: 10
   database:
-    container_name: sw6-database
     image: mariadb:lts
+    restart: always
     environment:
       MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-password}
+    command:
+      - --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+      - --log_bin_trust_function_creators=1
+      - --binlog_cache_size=16M
+      - --key_buffer_size=0
+      - --join_buffer_size=1024M
+      - --innodb_log_file_size=32M
+      - --innodb_buffer_pool_size=1024M
+      - --innodb_buffer_pool_instances=1
+      - --group_concat_max_len=320000
+      - --default-time-zone=+00:00
+      - --max_binlog_size=512M
+      - --binlog_expire_logs_seconds=28800
+      - --max_connections=256
+      - --max_allowed_packet=64M
     volumes:
-      - sw6-db-data:/var/lib/mysql:rw
+      - sw6-database-data:/var/lib/mysql:rw
     networks: [sw6-network]
     healthcheck:
       test: [ "CMD", "mariadb-admin" ,"ping", "-h", "localhost", "-p${MARIADB_ROOT_PASSWORD:-password}" ]
@@ -46,20 +79,23 @@ services:
       timeout: 1s
       retries: 10
   phpmyadmin:
-    container_name: sw6-phpmyadmin
     image: phpmyadmin:latest
+    restart: always
     environment:
-      PMA_HOST: sw6-database
+      PMA_HOST: database
       PMA_USER: root
       PMA_PASSWORD: ${MARIADB_ROOT_PASSWORD:-password}
     ports:
       - "80:80"
     networks: [sw6-network]
+    depends_on:
+      database:
+        condition: service_healthy
 
 networks:
   sw6-network:
     driver: bridge
 
 volumes:
-  sw6-data:
-  sw6-db-data:
+  sw6-shopware-data:
+  sw6-database-data:

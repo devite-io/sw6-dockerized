@@ -17,7 +17,7 @@ docker compose down
 ## Installing Shopware
 
 ```bash
-bash ./bin/install-shopware.sh sw6
+bash ./bin/install-shopware.sh sw6-shopware-1
 ```
 
 ## Updating Shopware
@@ -25,5 +25,5 @@ bash ./bin/install-shopware.sh sw6
 Set the targeted version in the `./shopware-dockerized/sw-symfony-flex/composer.json`, then run:
 
 ```bash
-bash ./bin/update-shopware.sh sw6
+bash ./bin/update-shopware.sh sw6-shopware-1
 ```
