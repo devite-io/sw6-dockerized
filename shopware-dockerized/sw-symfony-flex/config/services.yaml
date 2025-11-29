@@ -7,7 +7,7 @@ parameters:
     shopware.store.frw: '1'
     default_cdn_strategy: 'physical_filename'
     shopware.cdn.strategy: '%env(default:default_cdn_strategy:SHOPWARE_CDN_STRATEGY_DEFAULT)%'
-    env(OPENSEARCH_URL): 'http://localhost:9200'
+    env(OPENSEARCH_URL): 'http://admin:c3o_ZPHo!@opensearch:9200'
 
 services:
     # default configuration for services in *this* file
