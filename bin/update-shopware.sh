@@ -17,6 +17,11 @@ git stash && composer recipes:update --no-interaction shopware/core && git stash
 git stash && composer recipes:update --no-interaction shopware/storefront && git stash pop
 cd ../../
 
+# delete indices that might cause conflicts
+docker exec $swContainer bash -c "cd /usr/share/nginx/html && bin/console cache:clear"
+docker exec $swContainer bash -c "cd /usr/share/nginx/html && bin/console es:reset --no-interaction"
+docker exec $swContainer bash -c "cd /usr/share/nginx/html && bin/console es:admin:reset --no-interaction"
+
 # update Shopware
 docker cp ./shopware-dockerized/sw-symfony-flex/composer.json $swContainer:/usr/share/nginx/html/
 docker exec $swContainer bash -c "cd /usr/share/nginx/html && chmod 0777 composer.json && chown nginx:nginx composer.json"
