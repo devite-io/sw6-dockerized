@@ -18,15 +18,15 @@ git stash && composer recipes:update --no-interaction shopware/storefront && git
 cd ../../
 
 # delete indices that might cause conflicts
-docker exec $swContainer bash -c "cd /usr/share/nginx/html && bin/console cache:clear"
-docker exec $swContainer bash -c "cd /usr/share/nginx/html && bin/console es:reset --no-interaction"
-docker exec $swContainer bash -c "cd /usr/share/nginx/html && bin/console es:admin:reset --no-interaction"
+docker exec $swContainer bash -c "cd $swDir && bin/console cache:clear"
+docker exec $swContainer bash -c "cd $swDir && bin/console es:reset --no-interaction"
+docker exec $swContainer bash -c "cd $swDir && bin/console es:admin:reset --no-interaction"
 
 # update Shopware
-docker cp ./shopware-dockerized/sw-symfony-flex/composer.json $swContainer:/usr/share/nginx/html/
-docker exec $swContainer bash -c "cd /usr/share/nginx/html && chmod 0777 composer.json && chown nginx:nginx composer.json"
-docker exec --user nginx $swContainer bash -c "cd /usr/share/nginx/html && composer update --no-scripts"
+docker cp ./shopware-dockerized/sw-symfony-flex/composer.json $swContainer:$swDir/
+docker exec $swContainer bash -c "cd $swDir && chmod 0777 composer.json && chown nginx:nginx composer.json"
+docker exec --user nginx $swContainer bash -c "cd $swDir && composer update --no-scripts"
 
 # copy back updated composer files
-docker cp $swContainer:/usr/share/nginx/html/composer.json ./shopware-dockerized/sw-symfony-flex/composer.json
-docker cp $swContainer:/usr/share/nginx/html/composer.lock ./shopware-dockerized/sw-symfony-flex/composer.lock
+docker cp $swContainer:$swDir/composer.json ./shopware-dockerized/sw-symfony-flex/composer.json
+docker cp $swContainer:$swDir/composer.lock ./shopware-dockerized/sw-symfony-flex/composer.lock
