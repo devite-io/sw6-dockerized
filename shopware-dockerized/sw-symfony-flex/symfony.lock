@@ -48,7 +48,7 @@
             "repo": "github.com/shopware/recipes",
             "branch": "main",
             "version": "6.7",
-            "ref": "af7120002d51d12596e1a14b4fa51da29d599429"
+            "ref": "469075e215817ebc0a52d1dcc77a60a226a2b312"
         },
         "files": [
             "bin/.htaccess",
@@ -85,7 +85,7 @@
             "repo": "github.com/shopware/recipes",
             "branch": "main",
             "version": "6.7",
-            "ref": "13c5bb5ff2e8dde479bd0f4f398041d409864641"
+            "ref": "9b8a4205b35f7388acb69308f1135277945d75a4"
         },
         "files": [
             "bin/build-storefront.sh",
@@ -176,6 +176,15 @@
             "ref": "5ccbcb35c970d021327d54358e748c6962a39ed8"
         },
         "files": []
+    },
+    "symfony/property-info": {
+        "version": "7.3",
+        "recipe": {
+            "repo": "github.com/shopware/recipes",
+            "branch": "main",
+            "version": "7.3",
+            "ref": "d7afb8d11ee0e18f644cc77c2df9b372e89cb3a9"
+        }
     },
     "symfony/routing": {
         "version": "7.2",
