@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "53426837837ee68db0f103667be038b8",
+    "content-hash": "e198811dc6c8b86d806ca2d9d7deaf87",
     "packages": [
         {
             "name": "async-aws/core",
@@ -1402,25 +1402,25 @@
         },
         {
             "name": "dompdf/php-svg-lib",
-            "version": "1.0.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dompdf/php-svg-lib.git",
-                "reference": "eb045e518185298eb6ff8d80d0d0c6b17aecd9af"
+                "reference": "8259ffb930817e72b1ff1caef5d226501f3dfeb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dompdf/php-svg-lib/zipball/eb045e518185298eb6ff8d80d0d0c6b17aecd9af",
-                "reference": "eb045e518185298eb6ff8d80d0d0c6b17aecd9af",
+                "url": "https://api.github.com/repos/dompdf/php-svg-lib/zipball/8259ffb930817e72b1ff1caef5d226501f3dfeb1",
+                "reference": "8259ffb930817e72b1ff1caef5d226501f3dfeb1",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "php": "^7.1 || ^8.0",
-                "sabberworm/php-css-parser": "^8.4"
+                "sabberworm/php-css-parser": "^8.4 || ^9.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5"
+                "phpunit/phpunit": "^7.5 || ^8 || ^9 || ^10 || ^11"
             },
             "type": "library",
             "autoload": {
@@ -1442,9 +1442,9 @@
             "homepage": "https://github.com/dompdf/php-svg-lib",
             "support": {
                 "issues": "https://github.com/dompdf/php-svg-lib/issues",
-                "source": "https://github.com/dompdf/php-svg-lib/tree/1.0.0"
+                "source": "https://github.com/dompdf/php-svg-lib/tree/1.0.2"
             },
-            "time": "2024-04-29T13:26:35+00:00"
+            "time": "2026-01-02T16:01:13+00:00"
         },
         {
             "name": "dragonmantank/cron-expression",
@@ -2330,16 +2330,16 @@
         },
         {
             "name": "horstoeko/zugferd",
-            "version": "v1.0.118",
+            "version": "v1.0.120",
             "source": {
                 "type": "git",
                 "url": "https://github.com/horstoeko/zugferd.git",
-                "reference": "5259a34da6a5e5e92a764e7dd39cd7330335a579"
+                "reference": "c143ec75a7ffc62e2b64a87d175db9f13ab843c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/horstoeko/zugferd/zipball/5259a34da6a5e5e92a764e7dd39cd7330335a579",
-                "reference": "5259a34da6a5e5e92a764e7dd39cd7330335a579",
+                "url": "https://api.github.com/repos/horstoeko/zugferd/zipball/c143ec75a7ffc62e2b64a87d175db9f13ab843c1",
+                "reference": "c143ec75a7ffc62e2b64a87d175db9f13ab843c1",
                 "shasum": ""
             },
             "require": {
@@ -2398,9 +2398,9 @@
             ],
             "support": {
                 "issues": "https://github.com/horstoeko/zugferd/issues",
-                "source": "https://github.com/horstoeko/zugferd/tree/v1.0.118"
+                "source": "https://github.com/horstoeko/zugferd/tree/v1.0.120"
             },
-            "time": "2025-12-10T06:08:16+00:00"
+            "time": "2026-01-07T09:45:19+00:00"
         },
         {
             "name": "jms/metadata",
@@ -2569,16 +2569,16 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "6.6.3",
+            "version": "6.6.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsonrainbow/json-schema.git",
-                "reference": "134e98916fa2f663afa623970af345cd788e8967"
+                "reference": "2eeb75d21cf73211335888e7f5e6fd7440723ec7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/134e98916fa2f663afa623970af345cd788e8967",
-                "reference": "134e98916fa2f663afa623970af345cd788e8967",
+                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/2eeb75d21cf73211335888e7f5e6fd7440723ec7",
+                "reference": "2eeb75d21cf73211335888e7f5e6fd7440723ec7",
                 "shasum": ""
             },
             "require": {
@@ -2638,9 +2638,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jsonrainbow/json-schema/issues",
-                "source": "https://github.com/jsonrainbow/json-schema/tree/6.6.3"
+                "source": "https://github.com/jsonrainbow/json-schema/tree/6.6.4"
             },
-            "time": "2025-12-02T10:21:33+00:00"
+            "time": "2025-12-19T15:01:32+00:00"
         },
         {
             "name": "laminas/laminas-code",
@@ -3611,16 +3611,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "3.9.0",
+            "version": "3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "10d85740180ecba7896c87e06a166e0c95a0e3b6"
+                "reference": "b321dd6749f0bf7189444158a3ce785cc16d69b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/10d85740180ecba7896c87e06a166e0c95a0e3b6",
-                "reference": "10d85740180ecba7896c87e06a166e0c95a0e3b6",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/b321dd6749f0bf7189444158a3ce785cc16d69b0",
+                "reference": "b321dd6749f0bf7189444158a3ce785cc16d69b0",
                 "shasum": ""
             },
             "require": {
@@ -3638,7 +3638,7 @@
                 "graylog2/gelf-php": "^1.4.2 || ^2.0",
                 "guzzlehttp/guzzle": "^7.4.5",
                 "guzzlehttp/psr7": "^2.2",
-                "mongodb/mongodb": "^1.8",
+                "mongodb/mongodb": "^1.8 || ^2.0",
                 "php-amqplib/php-amqplib": "~2.4 || ^3",
                 "php-console/php-console": "^3.1.8",
                 "phpstan/phpstan": "^2",
@@ -3698,7 +3698,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/3.9.0"
+                "source": "https://github.com/Seldaek/monolog/tree/3.10.0"
             },
             "funding": [
                 {
@@ -3710,7 +3710,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-03-24T10:02:05+00:00"
+            "time": "2026-01-02T08:56:05+00:00"
         },
         {
             "name": "nyholm/psr7",
@@ -4100,16 +4100,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "2.3.0",
+            "version": "2.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "1e0cd5370df5dd2e556a36b9c62f62e555870495"
+                "reference": "16dbf9937da8d4528ceb2145c9c7c0bd29e26374"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/1e0cd5370df5dd2e556a36b9c62f62e555870495",
-                "reference": "1e0cd5370df5dd2e556a36b9c62f62e555870495",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/16dbf9937da8d4528ceb2145c9c7c0bd29e26374",
+                "reference": "16dbf9937da8d4528ceb2145c9c7c0bd29e26374",
                 "shasum": ""
             },
             "require": {
@@ -4141,9 +4141,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.3.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.3.1"
             },
-            "time": "2025-08-30T15:50:23+00:00"
+            "time": "2026-01-12T11:33:04+00:00"
         },
         {
             "name": "psr/cache",
@@ -4992,25 +4992,33 @@
         },
         {
             "name": "sabberworm/php-css-parser",
-            "version": "v8.9.0",
+            "version": "v9.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/MyIntervals/PHP-CSS-Parser.git",
-                "reference": "d8e916507b88e389e26d4ab03c904a082aa66bb9"
+                "reference": "1b363fdbdc6dd0ca0f4bf98d3a4d7f388133f1fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/MyIntervals/PHP-CSS-Parser/zipball/d8e916507b88e389e26d4ab03c904a082aa66bb9",
-                "reference": "d8e916507b88e389e26d4ab03c904a082aa66bb9",
+                "url": "https://api.github.com/repos/MyIntervals/PHP-CSS-Parser/zipball/1b363fdbdc6dd0ca0f4bf98d3a4d7f388133f1fb",
+                "reference": "1b363fdbdc6dd0ca0f4bf98d3a4d7f388133f1fb",
                 "shasum": ""
             },
             "require": {
                 "ext-iconv": "*",
-                "php": "^5.6.20 || ^7.0.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0"
+                "php": "^7.2.0 || ~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+                "thecodingmachine/safe": "^1.3 || ^2.5 || ^3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "5.7.27 || 6.5.14 || 7.5.20 || 8.5.41",
-                "rawr/cross-data-providers": "^2.0.0"
+                "php-parallel-lint/php-parallel-lint": "1.4.0",
+                "phpstan/extension-installer": "1.4.3",
+                "phpstan/phpstan": "1.12.28 || 2.1.25",
+                "phpstan/phpstan-phpunit": "1.4.2 || 2.0.7",
+                "phpstan/phpstan-strict-rules": "1.6.2 || 2.0.6",
+                "phpunit/phpunit": "8.5.46",
+                "rawr/phpunit-data-provider": "3.3.1",
+                "rector/rector": "1.2.10 || 2.1.7",
+                "rector/type-perfect": "1.0.0 || 2.1.0"
             },
             "suggest": {
                 "ext-mbstring": "for parsing UTF-8 CSS"
@@ -5018,7 +5026,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "9.0.x-dev"
+                    "dev-main": "9.2.x-dev"
                 }
             },
             "autoload": {
@@ -5052,9 +5060,9 @@
             ],
             "support": {
                 "issues": "https://github.com/MyIntervals/PHP-CSS-Parser/issues",
-                "source": "https://github.com/MyIntervals/PHP-CSS-Parser/tree/v8.9.0"
+                "source": "https://github.com/MyIntervals/PHP-CSS-Parser/tree/v9.1.0"
             },
-            "time": "2025-07-11T13:20:48+00:00"
+            "time": "2025-09-14T07:37:21+00:00"
         },
         {
             "name": "scssphp/scssphp",
@@ -5483,28 +5491,28 @@
         },
         {
             "name": "shopware/administration",
-            "version": "v6.7.5.1",
+            "version": "v6.7.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopware/administration.git",
-                "reference": "2f5b4ce0c586ce2a79d3b706632ab2d09170a4aa"
+                "reference": "e91a952585152c8a108d7283df00d9faec36495d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopware/administration/zipball/2f5b4ce0c586ce2a79d3b706632ab2d09170a4aa",
-                "reference": "2f5b4ce0c586ce2a79d3b706632ab2d09170a4aa",
+                "url": "https://api.github.com/repos/shopware/administration/zipball/e91a952585152c8a108d7283df00d9faec36495d",
+                "reference": "e91a952585152c8a108d7283df00d9faec36495d",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "~4.3.1",
                 "lcobucci/jwt": "^5.5",
                 "league/flysystem": "^3.13.0",
-                "league/oauth2-server": "^9.1",
+                "league/oauth2-server": "^9.3",
                 "pentatrion/vite-bundle": "^8.1",
-                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
                 "phpseclib/phpseclib": "^3.0",
                 "psr/http-message": "^1.1 || ^2.0",
-                "shopware/core": "v6.7.5.1",
+                "shopware/core": "v6.7.6.0",
                 "symfony/asset": "~7.3.0",
                 "symfony/cache": "~7.3.0",
                 "symfony/cache-contracts": "~3.6.0",
@@ -5549,10 +5557,10 @@
                 "docs": "https://developer.shopware.com",
                 "forum": "https://forum.shopware.com",
                 "issues": "https://github.com/shopware/shopware/issues",
-                "source": "https://github.com/shopware/administration/tree/v6.7.5.1",
+                "source": "https://github.com/shopware/administration/tree/v6.7.6.0",
                 "wiki": "https://developer.shopware.com"
             },
-            "time": "2025-12-09T10:07:30+00:00"
+            "time": "2026-01-13T13:05:12+00:00"
         },
         {
             "name": "shopware/conflicts",
@@ -5593,21 +5601,22 @@
         },
         {
             "name": "shopware/core",
-            "version": "v6.7.5.1",
+            "version": "v6.7.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopware/core.git",
-                "reference": "f8110758b8bf60589f9be8bbedc28076bcfba5ac"
+                "reference": "6b89189efdb06bb7b3eda17956c710524f2fde90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopware/core/zipball/f8110758b8bf60589f9be8bbedc28076bcfba5ac",
-                "reference": "f8110758b8bf60589f9be8bbedc28076bcfba5ac",
+                "url": "https://api.github.com/repos/shopware/core/zipball/6b89189efdb06bb7b3eda17956c710524f2fde90",
+                "reference": "6b89189efdb06bb7b3eda17956c710524f2fde90",
                 "shasum": ""
             },
             "require": {
-                "cocur/slugify": "^4.3.0",
+                "cocur/slugify": "^4.7.0",
                 "composer-runtime-api": "^2.1",
+                "composer/class-map-generator": "^1.7",
                 "composer/composer": "^2.8.5",
                 "composer/semver": "^3.4.0",
                 "doctrine/dbal": "~4.3.1",
@@ -5634,16 +5643,15 @@
                 "guzzlehttp/guzzle": "^7.5.0",
                 "guzzlehttp/psr7": "^2.4",
                 "horstoeko/zugferd": "^1.0.104",
-                "lcobucci/clock": "^3.1.0",
                 "lcobucci/jwt": "^5.5",
                 "league/flysystem": "^3.13.0",
                 "league/flysystem-local": "^3.29.0",
                 "league/flysystem-memory": "^3.10.3",
                 "league/mime-type-detection": "^1.13.0",
-                "league/oauth2-server": "^9.1",
+                "league/oauth2-server": "^9.3",
                 "monolog/monolog": "^3.3.1",
                 "nyholm/psr7": "^1.5",
-                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
                 "psr/cache": "^3.0.0",
                 "psr/event-dispatcher": "^1.0.0",
                 "psr/http-factory": "^1.0.1",
@@ -5760,7 +5768,8 @@
             },
             "autoload": {
                 "files": [
-                    "Framework/Adapter/Doctrine/Patch/AbstractAsset.php"
+                    "Framework/Adapter/Doctrine/Patch/AbstractAsset.php",
+                    "Framework/Adapter/Database/Mysql.php"
                 ],
                 "psr-4": {
                     "Shopware\\Core\\": ""
@@ -5781,23 +5790,23 @@
                 "docs": "https://developer.shopware.com",
                 "forum": "https://forum.shopware.com",
                 "issues": "https://github.com/shopware/shopware/issues",
-                "source": "https://github.com/shopware/core/tree/v6.7.5.1",
+                "source": "https://github.com/shopware/core/tree/v6.7.6.0",
                 "wiki": "https://developer.shopware.com"
             },
-            "time": "2025-12-03T13:17:59+00:00"
+            "time": "2025-12-19T21:28:52+00:00"
         },
         {
             "name": "shopware/elasticsearch",
-            "version": "v6.7.5.1",
+            "version": "v6.7.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopware/elasticsearch.git",
-                "reference": "4b4ae8191b7dd6db4c457753cc8f5ee95593d6b2"
+                "reference": "893fbbc57f97007d889ecca45cd78575fd54e3a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopware/elasticsearch/zipball/4b4ae8191b7dd6db4c457753cc8f5ee95593d6b2",
-                "reference": "4b4ae8191b7dd6db4c457753cc8f5ee95593d6b2",
+                "url": "https://api.github.com/repos/shopware/elasticsearch/zipball/893fbbc57f97007d889ecca45cd78575fd54e3a4",
+                "reference": "893fbbc57f97007d889ecca45cd78575fd54e3a4",
                 "shasum": ""
             },
             "require": {
@@ -5806,8 +5815,8 @@
                 "ext-curl": "*",
                 "monolog/monolog": "^3.3.1",
                 "opensearch-project/opensearch-php": "^2.3.1",
-                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
-                "shopware/core": "v6.7.5.1",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+                "shopware/core": "v6.7.6.0",
                 "shyim/opensearch-php-dsl": "^1.0.5",
                 "symfony/http-foundation": "~7.3.0",
                 "symfony/messenger": "~7.3.0"
@@ -5837,32 +5846,32 @@
                 "docs": "https://developer.shopware.com",
                 "forum": "https://forum.shopware.com",
                 "issues": "https://github.com/shopware/shopware/issues/",
-                "source": "https://github.com/shopware/elasticsearch/tree/v6.7.5.1",
+                "source": "https://github.com/shopware/elasticsearch/tree/v6.7.6.0",
                 "wiki": "https://developer.shopware.com"
             },
-            "time": "2025-12-09T10:06:05+00:00"
+            "time": "2026-01-13T13:03:27+00:00"
         },
         {
             "name": "shopware/storefront",
-            "version": "v6.7.5.1",
+            "version": "v6.7.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopware/storefront.git",
-                "reference": "98d3df0051ba5b73cccb63191f0714f1e442474e"
+                "reference": "acb70c3d73e012694f6f349895146d0ef94c4c5f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopware/storefront/zipball/98d3df0051ba5b73cccb63191f0714f1e442474e",
-                "reference": "98d3df0051ba5b73cccb63191f0714f1e442474e",
+                "url": "https://api.github.com/repos/shopware/storefront/zipball/acb70c3d73e012694f6f349895146d0ef94c4c5f",
+                "reference": "acb70c3d73e012694f6f349895146d0ef94c4c5f",
                 "shasum": ""
             },
             "require": {
-                "cocur/slugify": "^4.3.0",
+                "cocur/slugify": "^4.7.0",
                 "doctrine/dbal": "~4.3.1",
                 "meyfa/php-svg": "^0.16.1",
-                "php": "~8.2.0 || ~8.3.0 || ~8.4.0",
+                "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
                 "scssphp/scssphp": "v1.12.0",
-                "shopware/core": "v6.7.5.1",
+                "shopware/core": "v6.7.6.0",
                 "symfony/asset": "~7.3.0",
                 "symfony/cache": "~7.3.0",
                 "symfony/cache-contracts": "~3.6.0",
@@ -5910,23 +5919,23 @@
                 "docs": "https://developer.shopware.com",
                 "forum": "https://forum.shopware.com",
                 "issues": "https://github.com/shopware/shopware/issues",
-                "source": "https://github.com/shopware/storefront/tree/v6.7.5.1",
+                "source": "https://github.com/shopware/storefront/tree/v6.7.6.0",
                 "wiki": "https://developer.shopware.com"
             },
-            "time": "2025-12-09T10:07:13+00:00"
+            "time": "2026-01-13T13:04:41+00:00"
         },
         {
             "name": "shyim/opensearch-php-dsl",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shyim/opensearch-php-dsl.git",
-                "reference": "f2b9c32c4159aab57f529641c9848f4ea4f5c20a"
+                "reference": "3983148548fd048a66dfeba0a050f61470f6d055"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shyim/opensearch-php-dsl/zipball/f2b9c32c4159aab57f529641c9848f4ea4f5c20a",
-                "reference": "f2b9c32c4159aab57f529641c9848f4ea4f5c20a",
+                "url": "https://api.github.com/repos/shyim/opensearch-php-dsl/zipball/3983148548fd048a66dfeba0a050f61470f6d055",
+                "reference": "3983148548fd048a66dfeba0a050f61470f6d055",
                 "shasum": ""
             },
             "require": {
@@ -5966,22 +5975,22 @@
             "homepage": "https://github.com/shyim/opensearch-dsl",
             "support": {
                 "issues": "https://github.com/shyim/opensearch-php-dsl/issues",
-                "source": "https://github.com/shyim/opensearch-php-dsl/tree/1.1.2"
+                "source": "https://github.com/shyim/opensearch-php-dsl/tree/1.1.3"
             },
-            "time": "2025-02-07T10:16:38+00:00"
+            "time": "2026-01-13T15:32:00+00:00"
         },
         {
             "name": "smalot/pdfparser",
-            "version": "v2.12.2",
+            "version": "v2.12.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/smalot/pdfparser.git",
-                "reference": "370b7e983fafecb787a9bcfd73baab8038212ad1"
+                "reference": "61c9bcafcb92899b76d8ebda6508267bae77e264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smalot/pdfparser/zipball/370b7e983fafecb787a9bcfd73baab8038212ad1",
-                "reference": "370b7e983fafecb787a9bcfd73baab8038212ad1",
+                "url": "https://api.github.com/repos/smalot/pdfparser/zipball/61c9bcafcb92899b76d8ebda6508267bae77e264",
+                "reference": "61c9bcafcb92899b76d8ebda6508267bae77e264",
                 "shasum": ""
             },
             "require": {
@@ -6017,9 +6026,9 @@
             ],
             "support": {
                 "issues": "https://github.com/smalot/pdfparser/issues",
-                "source": "https://github.com/smalot/pdfparser/tree/v2.12.2"
+                "source": "https://github.com/smalot/pdfparser/tree/v2.12.3"
             },
-            "time": "2025-09-04T08:49:09+00:00"
+            "time": "2026-01-08T08:04:04+00:00"
         },
         {
             "name": "squirrelphp/twig-php-syntax",
@@ -10905,6 +10914,145 @@
                 }
             ],
             "time": "2025-12-04T18:07:52+00:00"
+        },
+        {
+            "name": "thecodingmachine/safe",
+            "version": "v3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thecodingmachine/safe.git",
+                "reference": "2cdd579eeaa2e78e51c7509b50cc9fb89a956236"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thecodingmachine/safe/zipball/2cdd579eeaa2e78e51c7509b50cc9fb89a956236",
+                "reference": "2cdd579eeaa2e78e51c7509b50cc9fb89a956236",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.4",
+                "phpstan/phpstan": "^2",
+                "phpunit/phpunit": "^10",
+                "squizlabs/php_codesniffer": "^3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/special_cases.php",
+                    "generated/apache.php",
+                    "generated/apcu.php",
+                    "generated/array.php",
+                    "generated/bzip2.php",
+                    "generated/calendar.php",
+                    "generated/classobj.php",
+                    "generated/com.php",
+                    "generated/cubrid.php",
+                    "generated/curl.php",
+                    "generated/datetime.php",
+                    "generated/dir.php",
+                    "generated/eio.php",
+                    "generated/errorfunc.php",
+                    "generated/exec.php",
+                    "generated/fileinfo.php",
+                    "generated/filesystem.php",
+                    "generated/filter.php",
+                    "generated/fpm.php",
+                    "generated/ftp.php",
+                    "generated/funchand.php",
+                    "generated/gettext.php",
+                    "generated/gmp.php",
+                    "generated/gnupg.php",
+                    "generated/hash.php",
+                    "generated/ibase.php",
+                    "generated/ibmDb2.php",
+                    "generated/iconv.php",
+                    "generated/image.php",
+                    "generated/imap.php",
+                    "generated/info.php",
+                    "generated/inotify.php",
+                    "generated/json.php",
+                    "generated/ldap.php",
+                    "generated/libxml.php",
+                    "generated/lzf.php",
+                    "generated/mailparse.php",
+                    "generated/mbstring.php",
+                    "generated/misc.php",
+                    "generated/mysql.php",
+                    "generated/mysqli.php",
+                    "generated/network.php",
+                    "generated/oci8.php",
+                    "generated/opcache.php",
+                    "generated/openssl.php",
+                    "generated/outcontrol.php",
+                    "generated/pcntl.php",
+                    "generated/pcre.php",
+                    "generated/pgsql.php",
+                    "generated/posix.php",
+                    "generated/ps.php",
+                    "generated/pspell.php",
+                    "generated/readline.php",
+                    "generated/rnp.php",
+                    "generated/rpminfo.php",
+                    "generated/rrd.php",
+                    "generated/sem.php",
+                    "generated/session.php",
+                    "generated/shmop.php",
+                    "generated/sockets.php",
+                    "generated/sodium.php",
+                    "generated/solr.php",
+                    "generated/spl.php",
+                    "generated/sqlsrv.php",
+                    "generated/ssdeep.php",
+                    "generated/ssh2.php",
+                    "generated/stream.php",
+                    "generated/strings.php",
+                    "generated/swoole.php",
+                    "generated/uodbc.php",
+                    "generated/uopz.php",
+                    "generated/url.php",
+                    "generated/var.php",
+                    "generated/xdiff.php",
+                    "generated/xml.php",
+                    "generated/xmlrpc.php",
+                    "generated/yaml.php",
+                    "generated/yaz.php",
+                    "generated/zip.php",
+                    "generated/zlib.php"
+                ],
+                "classmap": [
+                    "lib/DateTime.php",
+                    "lib/DateTimeImmutable.php",
+                    "lib/Exceptions/",
+                    "generated/Exceptions/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP core functions that throw exceptions instead of returning FALSE on error",
+            "support": {
+                "issues": "https://github.com/thecodingmachine/safe/issues",
+                "source": "https://github.com/thecodingmachine/safe/tree/v3.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/OskarStark",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/shish",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/staabm",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-05-14T06:15:44+00:00"
         },
         {
             "name": "twig/intl-extra",
