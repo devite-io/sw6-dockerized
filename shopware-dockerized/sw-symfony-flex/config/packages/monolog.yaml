@@ -2,17 +2,17 @@ monolog:
   handlers:
     main:
       type: fingers_crossed
-      level: error
-      action_level: error
+      level: "%env(LOG_LEVEL)%"
+      action_level: "%env(LOG_LEVEL)%"
       handler: nested
       excluded_http_codes: [404, 405]
       buffer_size: 32
     business_event_handler_buffer:
-      level: error
+      level: "%env(LOG_LEVEL)%"
     nested:
       type: rotating_file
       path: "%kernel.logs_dir%/%kernel.environment%.log"
-      level: error
+      level: "%env(LOG_LEVEL)%"
     console:
       type: console
       process_psr_3_messages: false
