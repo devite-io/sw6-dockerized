@@ -18,9 +18,10 @@ git stash && composer recipes:update --no-interaction shopware/storefront && git
 cd ../../
 
 # delete indices that might cause conflicts
-docker exec $swContainer bash -c "cd $swDir && bin/console cache:clear"
-docker exec $swContainer bash -c "cd $swDir && bin/console es:reset --no-interaction"
-docker exec $swContainer bash -c "cd $swDir && bin/console es:admin:reset --no-interaction"
+docker exec --user nginx $swContainer curl -X DELETE 'http://opensearch:9200/sw_product'
+docker exec --user nginx $swContainer bash -c "cd $swDir && bin/console es:reset --no-interaction"
+docker exec --user nginx $swContainer bash -c "cd $swDir && bin/console es:admin:reset --no-interaction"
+docker exec --user nginx $swContainer bash -c "cd $swDir && bin/console cache:clear:all"
 
 # update Shopware
 docker cp ./shopware-dockerized/sw-symfony-flex/composer.json $swContainer:$swDir/

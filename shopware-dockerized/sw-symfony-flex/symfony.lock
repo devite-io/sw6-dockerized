@@ -35,7 +35,7 @@
             "repo": "github.com/shopware/recipes",
             "branch": "main",
             "version": "6.7",
-            "ref": "00b75c7833e0004ef4591b40905afb08d8a83d38"
+            "ref": "914662662f5398fda649a2da578da202c3b50dac"
         },
         "files": [
             "bin/build-administration.sh",
@@ -85,7 +85,7 @@
             "repo": "github.com/shopware/recipes",
             "branch": "main",
             "version": "6.7",
-            "ref": "3a3eed555ad8d8d66bae908239b877f14c7f5654"
+            "ref": "512a94282164f74f7548d0915cbcd1cfd365f055"
         },
         "files": [
             "bin/build-storefront.sh",
