@@ -32,3 +32,5 @@ shopware:
       type: 'redis'
       config:
         connection: 'persistent'
+  product_stream:
+    indexing: false
