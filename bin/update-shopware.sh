@@ -25,9 +25,12 @@ docker exec --user nginx $swContainer bash -c "cd $swDir && bin/console cache:cl
 
 # update Shopware
 docker cp ./shopware-dockerized/sw-symfony-flex/composer.json $swContainer:$swDir/
-docker exec $swContainer bash -c "cd $swDir && chmod 0777 composer.json && chown nginx:nginx composer.json"
+docker cp ./shopware-dockerized/sw-symfony-flex/composer.lock $swContainer:$swDir/
+docker cp ./shopware-dockerized/sw-symfony-flex/symfony.lock $swContainer:$swDir/
+docker exec $swContainer bash -c "cd $swDir && chmod 0777 composer.json composer.lock symfony.lock && chown nginx:nginx composer.json composer.lock symfony.lock"
 docker exec --user nginx $swContainer bash -c "cd $swDir && composer update --no-scripts"
 
 # copy back updated composer files
 docker cp $swContainer:$swDir/composer.json ./shopware-dockerized/sw-symfony-flex/composer.json
 docker cp $swContainer:$swDir/composer.lock ./shopware-dockerized/sw-symfony-flex/composer.lock
+docker cp $swContainer:$swDir/symfony.lock ./shopware-dockerized/sw-symfony-flex/symfony.lock
