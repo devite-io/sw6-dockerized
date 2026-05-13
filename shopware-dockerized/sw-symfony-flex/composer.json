@@ -3,10 +3,10 @@
   "type": "project",
   "require": {
     "composer-runtime-api": "^2.0",
-    "shopware/administration": "v6.7.8.2",
-    "shopware/core": "v6.7.8.2",
-    "shopware/elasticsearch": "^6.7.8.2",
-    "shopware/storefront": "v6.7.8.2",
+    "shopware/administration": "v6.7.10.0",
+    "shopware/core": "v6.7.10.0",
+    "shopware/elasticsearch": "^6.7.10.0",
+    "shopware/storefront": "v6.7.10.0",
     "symfony/flex": "~2",
     "symfony/redis-messenger": "^7.4"
   },
