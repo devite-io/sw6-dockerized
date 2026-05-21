@@ -28,9 +28,5 @@ shopware:
   cart:
     compress: true
     compression_method: 'zstd'
-    storage:
-      type: 'redis'
-      config:
-        connection: 'persistent'
   product_stream:
     indexing: false

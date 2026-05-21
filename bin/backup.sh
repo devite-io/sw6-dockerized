@@ -54,7 +54,7 @@ mkdir backup-$timestamp && cd backup-$timestamp
     --lock-all-tables \
     --hex-blob \
     --disable-comments \
-    shopware \
+    --databases shopware \
   )
 } > shopware-db.sql
 
