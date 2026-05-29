@@ -15,14 +15,14 @@ RUN chown -R nginx:nginx /var/cache/nginx /usr/share/nginx/html /etc/nginx \
 
 # install php
 RUN curl -sSL https://packages.sury.org/php/README.txt | bash -x
-RUN apt install -y php8.3 php8.3-fpm php8.3-curl php8.3-dom php8.3-fileinfo php8.3-gd php8.3-iconv php8.3-intl php8.3-cli php8.3-mbstring php8.3-pdo php8.3-pdo-mysql php8.3-phar php8.3-simplexml php8.3-xml php8.3-zip php8.3-zstd php8.3-redis
+RUN apt install -y php8.4 php8.4-fpm php8.4-curl php8.4-dom php8.4-fileinfo php8.4-gd php8.4-iconv php8.4-intl php8.4-cli php8.4-mbstring php8.4-pdo php8.4-pdo-mysql php8.4-phar php8.4-simplexml php8.4-xml php8.4-zip php8.4-zstd php8.4-redis
 
 # configure php-fpm
-RUN sed -e 's/run\/php/tmp/' -i /etc/php/8.3/fpm/php-fpm.conf
-COPY includes/config/www-pool.conf /etc/php/8.3/fpm/pool.d/www.conf
-COPY includes/config/php.ini /etc/php/8.3/fpm/php.ini
-RUN touch /var/log/php8.3-fpm.log
-RUN chown -R nginx:nginx /var/log/php8.3-fpm.log /etc/php/8.3/fpm
+RUN sed -e 's/run\/php/tmp/' -i /etc/php/8.4/fpm/php-fpm.conf
+COPY includes/config/www-pool.conf /etc/php/8.4/fpm/pool.d/www.conf
+COPY includes/config/php.ini /etc/php/8.4/fpm/php.ini
+RUN touch /var/log/php8.4-fpm.log
+RUN chown -R nginx:nginx /var/log/php8.4-fpm.log /etc/php/8.4/fpm
 
 # install composer
 RUN curl -sS https://getcomposer.org/installer | php
@@ -59,7 +59,7 @@ RUN usermod -d /usr/share/nginx nginx \
 
 # add entrypoint scripts
 COPY includes/scripts/entrypoint.sh /entrypoint.sh
-RUN echo "#!/bin/sh\ncd /usr/share/nginx/html\nphp bin/console dal:refresh:index --use-queue\n" > /docker-entrypoint.d/10-index-shopware.sh
+RUN echo "#!/bin/sh\ncd /usr/share/nginx/html\nphp bin/console messenger:setup-transports\nphp bin/console dal:refresh:index --use-queue\n" > /docker-entrypoint.d/10-index-shopware.sh
 RUN chmod +x /entrypoint.sh /docker-entrypoint.d/*.sh
 
 CMD ["sh", "/entrypoint.sh"]

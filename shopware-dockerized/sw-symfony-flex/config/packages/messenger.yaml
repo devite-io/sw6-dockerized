@@ -1,0 +1,18 @@
+framework:
+  messenger:
+    transports:
+      async:
+        dsn: '%env(MESSENGER_TRANSPORT_DSN)%'
+        options:
+          auto_setup: false
+          consumer: '%env(MESSENGER_CONSUMER_NAME)%'
+      failed:
+        dsn: '%env(MESSENGER_TRANSPORT_FAILURE_DSN)%'
+        options:
+          auto_setup: false
+          consumer: '%env(MESSENGER_CONSUMER_NAME)%'
+      low_priority:
+        dsn: '%env(MESSENGER_TRANSPORT_LOW_PRIORITY_DSN)%'
+        options:
+          auto_setup: false
+          consumer: '%env(MESSENGER_CONSUMER_NAME)%'

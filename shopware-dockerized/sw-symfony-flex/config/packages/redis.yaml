@@ -1,3 +1,0 @@
-framework:
-  session:
-    handler_id: 'redis://valkey:6379/0'
