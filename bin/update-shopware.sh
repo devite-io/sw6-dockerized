@@ -9,11 +9,8 @@ fi
 swContainer="$1"
 swDir="/usr/share/nginx/html"
 
-# update symfony flex recipes
+# update composer dependencies
 cd ../shopware-dockerized/sw-symfony-flex
-git stash && composer recipes:update --no-interaction shopware/administration && git stash pop
-git stash && composer recipes:update --no-interaction shopware/core && git stash pop
-git stash && composer recipes:update --no-interaction shopware/storefront && git stash pop
 composer update --no-scripts
 cd ../../
 
