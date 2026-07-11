@@ -17,7 +17,7 @@ docker compose down
 ## Installing Shopware
 
 ```bash
-bash ./bin/install-shopware.sh sw6-shopware-1
+bash ./bin/install-shopware.sh sw6-shopware-1 en_GB
 ```
 
 ## Updating Shopware
