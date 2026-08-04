@@ -28,7 +28,8 @@ Set the targeted version in the `./shopware-dockerized/sw-symfony-flex/composer.
 bash ./bin/update-shopware.sh sw6-shopware-1
 cd ./shopware-dockerized/sw-symfony-flex
 composer recipes:update --no-interaction shopware/administration
-composer recipes:update --no-interaction shopware/administration
-composer recipes:update --no-interaction shopware/administration
+composer recipes:update --no-interaction shopware/core
+composer recipes:update --no-interaction shopware/elasticsearch
+composer recipes:update --no-interaction shopware/storefront
 cd ../../
 ```
