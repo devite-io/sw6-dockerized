@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "39f30bf289580df90f3bf640cba46225",
+    "content-hash": "96ea917a39aaa000e02c6557b53f1974",
     "packages": [
         {
             "name": "async-aws/core",
@@ -1884,21 +1884,21 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.15.2",
+            "version": "7.15.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "744101956d78b7c1384d0cbf379db13e859167bf"
+                "reference": "ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/744101956d78b7c1384d0cbf379db13e859167bf",
-                "reference": "744101956d78b7c1384d0cbf379db13e859167bf",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc",
+                "reference": "ae311b8f045ea93ce7b1c9cdb7cec06c53f944bc",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
-                "guzzlehttp/promises": "^2.5.1",
+                "guzzlehttp/promises": "^2.5.2",
                 "guzzlehttp/psr7": "^2.13",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
@@ -1992,7 +1992,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.15.2"
+                "source": "https://github.com/guzzle/guzzle/tree/7.15.3"
             },
             "funding": [
                 {
@@ -2008,20 +2008,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-26T23:23:20+00:00"
+            "time": "2026-08-05T19:48:21+00:00"
         },
         {
             "name": "guzzlehttp/promises",
-            "version": "2.5.1",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "9ad1e4fc607446a055b95870c7f668e93b5cff29"
+                "reference": "2823687acff28b2dbe67b2508a6b300e2c3fa4ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/9ad1e4fc607446a055b95870c7f668e93b5cff29",
-                "reference": "9ad1e4fc607446a055b95870c7f668e93b5cff29",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/2823687acff28b2dbe67b2508a6b300e2c3fa4ce",
+                "reference": "2823687acff28b2dbe67b2508a6b300e2c3fa4ce",
                 "shasum": ""
             },
             "require": {
@@ -2076,7 +2076,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/2.5.1"
+                "source": "https://github.com/guzzle/promises/tree/2.5.2"
             },
             "funding": [
                 {
@@ -2092,7 +2092,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-08T15:48:39+00:00"
+            "time": "2026-08-05T19:30:54+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -3492,16 +3492,16 @@
         },
         {
             "name": "mcp/sdk",
-            "version": "v0.5.0",
+            "version": "v0.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/modelcontextprotocol/php-sdk.git",
-                "reference": "fb2c8c2ee4ab2791239c5f534bb07bfb7589d4e8"
+                "reference": "433c84b58af346dd32f15f9909679e96a46ebe23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modelcontextprotocol/php-sdk/zipball/fb2c8c2ee4ab2791239c5f534bb07bfb7589d4e8",
-                "reference": "fb2c8c2ee4ab2791239c5f534bb07bfb7589d4e8",
+                "url": "https://api.github.com/repos/modelcontextprotocol/php-sdk/zipball/433c84b58af346dd32f15f9909679e96a46ebe23",
+                "reference": "433c84b58af346dd32f15f9909679e96a46ebe23",
                 "shasum": ""
             },
             "require": {
@@ -3570,9 +3570,9 @@
             "description": "Model Context Protocol SDK for Client and Server applications in PHP",
             "support": {
                 "issues": "https://github.com/modelcontextprotocol/php-sdk/issues",
-                "source": "https://github.com/modelcontextprotocol/php-sdk/tree/v0.5.0"
+                "source": "https://github.com/modelcontextprotocol/php-sdk/tree/v0.6.0"
             },
-            "time": "2026-04-26T13:37:40+00:00"
+            "time": "2026-06-02T15:47:04+00:00"
         },
         {
             "name": "meyfa/php-svg",
@@ -3730,6 +3730,63 @@
                 }
             ],
             "time": "2026-01-02T08:56:05+00:00"
+        },
+        {
+            "name": "nikic/php-parser",
+            "version": "v5.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/PHP-Parser.git",
+                "reference": "044a6a392ff8ad0d61f14370a5fbbd0a0107152f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/044a6a392ff8ad0d61f14370a5fbbd0a0107152f",
+                "reference": "044a6a392ff8ad0d61f14370a5fbbd0a0107152f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-tokenizer": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "ircmaxell/php-yacc": "^0.0.7",
+                "phpunit/phpunit": "^9.0"
+            },
+            "bin": [
+                "bin/php-parse"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "PhpParser\\": "lib/PhpParser"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov"
+                }
+            ],
+            "description": "A PHP parser written in PHP",
+            "keywords": [
+                "parser",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/nikic/PHP-Parser/issues",
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.8.0"
+            },
+            "time": "2026-07-04T14:30:18+00:00"
         },
         {
             "name": "nyholm/psr7",
@@ -5980,16 +6037,16 @@
         },
         {
             "name": "shopware/administration",
-            "version": "v6.7.12.2",
+            "version": "v6.7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopware/administration.git",
-                "reference": "8240435adfbcdb97b78301e6b473c7feae30351f"
+                "reference": "a8e26537490410fed450b9e526d361c43a62e808"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopware/administration/zipball/8240435adfbcdb97b78301e6b473c7feae30351f",
-                "reference": "8240435adfbcdb97b78301e6b473c7feae30351f",
+                "url": "https://api.github.com/repos/shopware/administration/zipball/a8e26537490410fed450b9e526d361c43a62e808",
+                "reference": "a8e26537490410fed450b9e526d361c43a62e808",
                 "shasum": ""
             },
             "require": {
@@ -6000,12 +6057,12 @@
                 "pentatrion/vite-bundle": "^8.1",
                 "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
                 "phpseclib/phpseclib": "^3.0",
+                "psr/clock": "^1.0.0",
                 "psr/http-message": "^1.1 || ^2.0",
-                "shopware/core": "v6.7.12.2",
+                "shopware/core": "v6.7.13.0",
                 "symfony/asset": "~7.4.0",
                 "symfony/cache": "~7.4.12",
                 "symfony/cache-contracts": "~3.6.0",
-                "symfony/clock": "~7.4.0",
                 "symfony/config": "~7.4.0",
                 "symfony/console": "~7.4.0",
                 "symfony/dependency-injection": "~7.4.0",
@@ -6050,27 +6107,27 @@
                 "docs": "https://developer.shopware.com",
                 "forum": "https://forum.shopware.com",
                 "issues": "https://github.com/shopware/shopware/issues",
-                "source": "https://github.com/shopware/administration/tree/v6.7.12.2",
+                "source": "https://github.com/shopware/administration/tree/v6.7.13.0",
                 "wiki": "https://developer.shopware.com"
             },
-            "time": "2026-07-23T11:17:29+00:00"
+            "time": "2026-08-05T08:42:32+00:00"
         },
         {
             "name": "shopware/conflicts",
-            "version": "0.6.1",
+            "version": "0.6.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopware/conflicts.git",
-                "reference": "8ca5d196cc2fa5813c841eca0c15efcf26fa2404"
+                "reference": "679e5ab87db7584341211f691e3b55e59b02bf38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopware/conflicts/zipball/8ca5d196cc2fa5813c841eca0c15efcf26fa2404",
-                "reference": "8ca5d196cc2fa5813c841eca0c15efcf26fa2404",
+                "url": "https://api.github.com/repos/shopware/conflicts/zipball/679e5ab87db7584341211f691e3b55e59b02bf38",
+                "reference": "679e5ab87db7584341211f691e3b55e59b02bf38",
                 "shasum": ""
             },
             "require": {
-                "shopware/core": ">=6.7.11.0"
+                "shopware/core": ">=6.7.12.1"
             },
             "conflict": {
                 "phenx/php-font-lib": "<0.5.5",
@@ -6088,22 +6145,22 @@
             "description": "Shopware 6 conflicting packages",
             "support": {
                 "issues": "https://github.com/shopware/conflicts/issues",
-                "source": "https://github.com/shopware/conflicts/tree/0.6.1"
+                "source": "https://github.com/shopware/conflicts/tree/0.6.2"
             },
-            "time": "2026-05-26T08:44:41+00:00"
+            "time": "2026-07-07T07:15:06+00:00"
         },
         {
             "name": "shopware/core",
-            "version": "v6.7.12.2",
+            "version": "v6.7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopware/core.git",
-                "reference": "ca2053d7e296cc1f77124d98d74e5c1aa7f4cdfd"
+                "reference": "d9ff359866555f20e1922bc20c89ca57c266d130"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopware/core/zipball/ca2053d7e296cc1f77124d98d74e5c1aa7f4cdfd",
-                "reference": "ca2053d7e296cc1f77124d98d74e5c1aa7f4cdfd",
+                "url": "https://api.github.com/repos/shopware/core/zipball/d9ff359866555f20e1922bc20c89ca57c266d130",
+                "reference": "d9ff359866555f20e1922bc20c89ca57c266d130",
                 "shasum": ""
             },
             "require": {
@@ -6116,12 +6173,15 @@
                 "doctrine/inflector": "^2.0",
                 "dompdf/dompdf": "3.1.6",
                 "dragonmantank/cron-expression": "^3.3",
+                "ext-ctype": "*",
                 "ext-curl": "*",
                 "ext-dom": "*",
                 "ext-fileinfo": "*",
+                "ext-filter": "*",
                 "ext-gd": "*",
                 "ext-intl": "*",
                 "ext-json": "*",
+                "ext-libxml": "*",
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
                 "ext-pdo": "*",
@@ -6135,6 +6195,7 @@
                 "ext-zlib": "*",
                 "ezyang/htmlpurifier": "^4.16",
                 "guzzlehttp/guzzle": "^7.5.0",
+                "guzzlehttp/promises": "^2.5",
                 "guzzlehttp/psr7": "^2.4",
                 "horstoeko/zugferd": "^1.0.104",
                 "lcobucci/jwt": "^5.5",
@@ -6143,20 +6204,25 @@
                 "league/flysystem-memory": "^3.10.3",
                 "league/mime-type-detection": "^1.13.0",
                 "league/oauth2-server": "^9.3",
+                "mcp/sdk": "^0.6.0",
                 "monolog/monolog": "^3.3.1",
+                "nikic/php-parser": "^5.8.0",
                 "nyholm/psr7": "^1.5",
                 "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
                 "phpseclib/phpseclib": "^3.0",
                 "psr/cache": "^3.0.0",
+                "psr/clock": "^1.0.0",
+                "psr/container": "^2.0.2",
                 "psr/event-dispatcher": "^1.0.0",
                 "psr/http-factory": "^1.0.1",
                 "psr/http-message": "^1.1 || ^2.0",
+                "psr/http-server-middleware": "^1.0",
                 "psr/log": "^3.0.0",
                 "psr/simple-cache": "^3.0.0",
                 "ramsey/uuid": "^4.7",
                 "setasign/fpdi": "^2.3.7",
                 "setasign/tfpdf": "^1.33",
-                "shopware/conflicts": "0.6.1",
+                "shopware/conflicts": "0.6.2",
                 "squirrelphp/twig-php-syntax": "^1.13.0",
                 "symfony/asset": "~7.4.0",
                 "symfony/cache": "~7.4.12",
@@ -6182,12 +6248,13 @@
                 "symfony/intl": "~7.4.0",
                 "symfony/lock": "~7.4.0",
                 "symfony/mailer": "~7.4.12",
-                "symfony/mcp-bundle": "~0.9.0",
+                "symfony/mcp-bundle": "~0.10.0",
                 "symfony/messenger": "~7.4.12",
                 "symfony/mime": "~7.4.12",
                 "symfony/monolog-bridge": "~7.4.12",
                 "symfony/monolog-bundle": "~3.11.0",
                 "symfony/options-resolver": "~7.4.0",
+                "symfony/password-hasher": "~7.4.0",
                 "symfony/polyfill-php83": ">=1.34.0",
                 "symfony/polyfill-php84": ">=1.34.0",
                 "symfony/polyfill-php85": ">=1.34.0",
@@ -6210,6 +6277,7 @@
                 "symfony/translation-contracts": "~3.6.0",
                 "symfony/twig-bridge": "~7.4.12",
                 "symfony/twig-bundle": "~7.4.0",
+                "symfony/uid": "~7.4.9",
                 "symfony/ux-twig-component": "~2.35.0",
                 "symfony/validator": "~7.4.0",
                 "symfony/var-exporter": "~7.4.0",
@@ -6233,24 +6301,6 @@
                 "symfony/polyfill-php80": "*",
                 "symfony/polyfill-php81": "*",
                 "symfony/polyfill-php82": "*"
-            },
-            "require-dev": {
-                "ergebnis/phpunit-slow-test-detector": "^2.4",
-                "ext-tokenizer": "*",
-                "ext-xmlwriter": "*",
-                "jdorn/sql-formatter": "^1.2.17",
-                "league/flysystem-async-aws-s3": "^3.29.0",
-                "league/flysystem-google-cloud-storage": "^3.10.3",
-                "nikic/php-parser": "^5.4.0",
-                "opis/json-schema": "^2.3.0",
-                "phpunit/phpunit": "^11.5.19",
-                "shopware/dev-tools": "^1.3",
-                "smalot/pdfparser": "^2.2.2",
-                "symfony/browser-kit": "~7.4.0",
-                "symfony/dom-crawler": "~7.4.12",
-                "symfony/phpunit-bridge": "~7.4.0",
-                "symfony/var-dumper": "~7.4.0",
-                "symfony/web-profiler-bundle": "~7.4.12"
             },
             "suggest": {
                 "league/flysystem-async-aws-s3": "Required to use the Flysystem S3 driver (^3.10.3)",
@@ -6290,40 +6340,49 @@
                 "docs": "https://developer.shopware.com",
                 "forum": "https://forum.shopware.com",
                 "issues": "https://github.com/shopware/shopware/issues",
-                "source": "https://github.com/shopware/core/tree/v6.7.12.2",
+                "source": "https://github.com/shopware/core/tree/v6.7.13.0",
                 "wiki": "https://developer.shopware.com"
             },
-            "time": "2026-07-23T08:25:50+00:00"
+            "time": "2026-07-28T16:25:44+00:00"
         },
         {
             "name": "shopware/elasticsearch",
-            "version": "v6.7.12.2",
+            "version": "v6.7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopware/elasticsearch.git",
-                "reference": "e0dc3722851408fef92624a54908d90c8fe92afd"
+                "reference": "c144508b29bb10fa277adb5f31eea6872aba302d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopware/elasticsearch/zipball/e0dc3722851408fef92624a54908d90c8fe92afd",
-                "reference": "e0dc3722851408fef92624a54908d90c8fe92afd",
+                "url": "https://api.github.com/repos/shopware/elasticsearch/zipball/c144508b29bb10fa277adb5f31eea6872aba302d",
+                "reference": "c144508b29bb10fa277adb5f31eea6872aba302d",
                 "shasum": ""
             },
             "require": {
                 "async-aws/core": "^1.22",
                 "doctrine/dbal": "~4.4.0",
                 "ext-curl": "*",
+                "guzzlehttp/guzzle": "^7.5.0",
+                "guzzlehttp/psr7": "^2.4",
                 "monolog/monolog": "^3.3.1",
                 "opensearch-project/opensearch-php": "^2.6.0",
                 "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
-                "shopware/core": "v6.7.12.2",
+                "psr/clock": "^1.0.0",
+                "psr/http-client": "^1.0.3",
+                "psr/http-message": "^1.1 || ^2.0",
+                "psr/log": "^3.0.0",
+                "shopware/core": "v6.7.13.0",
                 "shyim/opensearch-php-dsl": "^1.1.4",
+                "symfony/config": "~7.4.0",
+                "symfony/console": "~7.4.0",
+                "symfony/dependency-injection": "~7.4.0",
                 "symfony/event-dispatcher": "~7.4.0",
+                "symfony/event-dispatcher-contracts": "~3.6.0",
                 "symfony/http-foundation": "~7.4.0",
-                "symfony/messenger": "~7.4.12"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^11.5.19"
+                "symfony/messenger": "~7.4.12",
+                "symfony/routing": "~7.4.12",
+                "symfony/stopwatch": "~7.4.0"
             },
             "type": "library",
             "extra": {
@@ -6347,40 +6406,50 @@
                 "docs": "https://developer.shopware.com",
                 "forum": "https://forum.shopware.com",
                 "issues": "https://github.com/shopware/shopware/issues/",
-                "source": "https://github.com/shopware/elasticsearch/tree/v6.7.12.2",
+                "source": "https://github.com/shopware/elasticsearch/tree/v6.7.13.0",
                 "wiki": "https://developer.shopware.com"
             },
-            "time": "2026-07-23T11:15:52+00:00"
+            "time": "2026-08-05T08:40:58+00:00"
         },
         {
             "name": "shopware/storefront",
-            "version": "v6.7.12.2",
+            "version": "v6.7.13.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shopware/storefront.git",
-                "reference": "d0b44b4a1da72efeb120dc8dfe7b4aea7e247421"
+                "reference": "fbc1f105b7f29b77abadaa4e9f8b06d0d71b6e93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shopware/storefront/zipball/d0b44b4a1da72efeb120dc8dfe7b4aea7e247421",
-                "reference": "d0b44b4a1da72efeb120dc8dfe7b4aea7e247421",
+                "url": "https://api.github.com/repos/shopware/storefront/zipball/fbc1f105b7f29b77abadaa4e9f8b06d0d71b6e93",
+                "reference": "fbc1f105b7f29b77abadaa4e9f8b06d0d71b6e93",
                 "shasum": ""
             },
             "require": {
                 "cocur/slugify": "^4.7.0",
                 "doctrine/dbal": "~4.4.0",
+                "guzzlehttp/guzzle": "^7.5.0",
+                "guzzlehttp/psr7": "^2.4",
+                "league/flysystem": "^3.13.0",
+                "mcp/sdk": "^0.6.0",
                 "meyfa/php-svg": "^0.16.1",
                 "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+                "psr/clock": "^1.0.0",
+                "psr/http-client": "^1.0.3",
+                "psr/log": "^3.0.0",
                 "scssphp/scssphp": "v1.12.0",
-                "shopware/core": "v6.7.12.2",
+                "shopware/core": "v6.7.13.0",
                 "symfony/asset": "~7.4.0",
                 "symfony/cache": "~7.4.12",
                 "symfony/cache-contracts": "~3.6.0",
+                "symfony/clock": "~7.4.0",
                 "symfony/config": "~7.4.0",
                 "symfony/console": "~7.4.0",
                 "symfony/dependency-injection": "~7.4.0",
                 "symfony/event-dispatcher": "~7.4.0",
                 "symfony/event-dispatcher-contracts": "~3.6.0",
+                "symfony/filesystem": "~7.4.0",
+                "symfony/finder": "~7.4.0",
                 "symfony/framework-bundle": "~7.4.0",
                 "symfony/http-foundation": "~7.4.0",
                 "symfony/http-kernel": "~7.4.12",
@@ -6388,16 +6457,16 @@
                 "symfony/mime": "~7.4.12",
                 "symfony/routing": "~7.4.12",
                 "symfony/security-core": "~7.4.12",
+                "symfony/serializer": "~7.4.0",
                 "symfony/service-contracts": "~3.6.0",
+                "symfony/string": "~7.4.0",
+                "symfony/translation-contracts": "~3.6.0",
+                "symfony/twig-bridge": "~7.4.12",
                 "symfony/ux-twig-component": "~2.35.0",
                 "symfony/validator": "~7.4.0",
                 "twig/intl-extra": "^3.26.0",
                 "twig/string-extra": "^3.24.0",
                 "twig/twig": "^3.26.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^11.5.19",
-                "symfony/css-selector": "~7.4.0"
             },
             "type": "library",
             "extra": {
@@ -6424,10 +6493,10 @@
                 "docs": "https://developer.shopware.com",
                 "forum": "https://forum.shopware.com",
                 "issues": "https://github.com/shopware/shopware/issues",
-                "source": "https://github.com/shopware/storefront/tree/v6.7.12.2",
+                "source": "https://github.com/shopware/storefront/tree/v6.7.13.0",
                 "wiki": "https://developer.shopware.com"
             },
-            "time": "2026-07-23T11:17:09+00:00"
+            "time": "2026-08-05T08:41:56+00:00"
         },
         {
             "name": "shyim/opensearch-php-dsl",
@@ -8734,20 +8803,20 @@
         },
         {
             "name": "symfony/mcp-bundle",
-            "version": "v0.9.0",
+            "version": "v0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/mcp-bundle.git",
-                "reference": "654f639e94f4d7694771e6628380a9ff04c9d9c1"
+                "reference": "b473eaee250c1e59d33487e6f3a41c35a1f02afb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/mcp-bundle/zipball/654f639e94f4d7694771e6628380a9ff04c9d9c1",
-                "reference": "654f639e94f4d7694771e6628380a9ff04c9d9c1",
+                "url": "https://api.github.com/repos/symfony/mcp-bundle/zipball/b473eaee250c1e59d33487e6f3a41c35a1f02afb",
+                "reference": "b473eaee250c1e59d33487e6f3a41c35a1f02afb",
                 "shasum": ""
             },
             "require": {
-                "mcp/sdk": "^0.5",
+                "mcp/sdk": "^0.6",
                 "php-http/discovery": "^1.20",
                 "symfony/config": "^7.3|^8.0",
                 "symfony/console": "^7.3|^8.0",
@@ -8795,7 +8864,7 @@
             ],
             "description": "Symfony integration bundle for Model Context Protocol (via official mcp/sdk)",
             "support": {
-                "source": "https://github.com/symfony/mcp-bundle/tree/v0.9.0"
+                "source": "https://github.com/symfony/mcp-bundle/tree/v0.10.0"
             },
             "funding": [
                 {
@@ -8815,7 +8884,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-15T23:41:17+00:00"
+            "time": "2026-06-15T19:39:32+00:00"
         },
         {
             "name": "symfony/messenger",
@@ -9236,24 +9305,27 @@
         },
         {
             "name": "symfony/password-hasher",
-            "version": "v8.1.0",
+            "version": "v7.4.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/password-hasher.git",
-                "reference": "6934d16beaa4677f2c4584229fff1b51099dd7af"
+                "reference": "18a7d92126c95962f7efbcc9e421ba710a366847"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/password-hasher/zipball/6934d16beaa4677f2c4584229fff1b51099dd7af",
-                "reference": "6934d16beaa4677f2c4584229fff1b51099dd7af",
+                "url": "https://api.github.com/repos/symfony/password-hasher/zipball/18a7d92126c95962f7efbcc9e421ba710a366847",
+                "reference": "18a7d92126c95962f7efbcc9e421ba710a366847",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.4.1"
+                "php": ">=8.2"
+            },
+            "conflict": {
+                "symfony/security-core": "<6.4"
             },
             "require-dev": {
-                "symfony/console": "^7.4|^8.0",
-                "symfony/security-core": "^7.4|^8.0"
+                "symfony/console": "^6.4|^7.0|^8.0",
+                "symfony/security-core": "^6.4|^7.0|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -9285,7 +9357,7 @@
                 "password"
             ],
             "support": {
-                "source": "https://github.com/symfony/password-hasher/tree/v8.1.0"
+                "source": "https://github.com/symfony/password-hasher/tree/v7.4.8"
             },
             "funding": [
                 {
@@ -9305,7 +9377,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-29T05:06:50+00:00"
+            "time": "2026-03-24T13:12:05+00:00"
         },
         {
             "name": "symfony/polyfill-php83",
@@ -11420,24 +11492,24 @@
         },
         {
             "name": "symfony/uid",
-            "version": "v8.1.0",
+            "version": "v7.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/uid.git",
-                "reference": "7393f157a55f7e70a4de0334435c55a5a8fe749a"
+                "reference": "2676b524340abcfe4d6151ec698463cebafee439"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/uid/zipball/7393f157a55f7e70a4de0334435c55a5a8fe749a",
-                "reference": "7393f157a55f7e70a4de0334435c55a5a8fe749a",
+                "url": "https://api.github.com/repos/symfony/uid/zipball/2676b524340abcfe4d6151ec698463cebafee439",
+                "reference": "2676b524340abcfe4d6151ec698463cebafee439",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.4.1",
+                "php": ">=8.2",
                 "symfony/polyfill-uuid": "^1.15"
             },
             "require-dev": {
-                "symfony/console": "^7.4|^8.0"
+                "symfony/console": "^6.4|^7.0|^8.0"
             },
             "type": "library",
             "autoload": {
@@ -11474,7 +11546,7 @@
                 "uuid"
             ],
             "support": {
-                "source": "https://github.com/symfony/uid/tree/v8.1.0"
+                "source": "https://github.com/symfony/uid/tree/v7.4.9"
             },
             "funding": [
                 {
@@ -11494,7 +11566,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-29T05:06:50+00:00"
+            "time": "2026-04-30T15:19:22+00:00"
         },
         {
             "name": "symfony/ux-twig-component",
