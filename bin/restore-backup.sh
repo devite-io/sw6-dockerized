@@ -1,22 +1,23 @@
 #!/bin/bash
 
-if [ $# -ne 4 ]; then
-  echo "Usage: $0 <shopware container> <db container> <db password> <backup path>"
+if [ $# -ne 3 ]; then
+  echo "Usage: $0 <compose project path> <db password> <backup path>"
   exit 1
 fi
 
 
 ### BEGIN VALIDATION ###
 
-swContainer="$1"
-dbContainer="$2"
-sqlPassword="$3"
+composeProjectPath="$(realpath "$1")"
+sqlPassword="$2"
+
+cd "$composeProjectPath"
 
 host="localhost"
 port="3306"
 user="root"
 
-(docker exec $dbContainer mariadb \
+(docker compose exec database mariadb \
   -h "$host" \
   -P "$port" \
   -u "$user" \
@@ -29,7 +30,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-backupFile="$4"
+backupFile="$3"
 
 if [ ! -f "$backupFile" ]; then
   echo "Backup file '$backupFile' does not exist."
@@ -47,47 +48,41 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-cd backup-to-restore/backup-*/
-
 # restore Shopware
-cd shopware-files
-
 swDir="/usr/share/nginx/html"
 
-docker exec $swContainer bash -c "cd $swDir/custom && rm -rf apps/*"
-docker exec $swContainer bash -c "cd $swDir/public && rm -rf bundles/ media/ thumbnail/"
-docker exec $swContainer bash -c "cd $swDir/files && rm -rf *"
-docker exec $swContainer bash -c "cd $swDir/var && rm -rf */"
+docker compose exec shopware bash -c "cd $swDir/custom && rm -rf apps/*"
+docker compose exec shopware bash -c "cd $swDir/public && rm -rf bundles/ media/ thumbnail/"
+docker compose exec shopware bash -c "cd $swDir/files && rm -rf *"
+docker compose exec shopware bash -c "cd $swDir/var && rm -rf */"
 
-containerPath="$swContainer:$swDir"
-docker cp -q "public/" $containerPath/
-docker cp -q "custom/" $containerPath/
-docker cp -q "files/" $containerPath/
-docker cp -q "var/" $containerPath/
-docker cp -q "install.lock" $containerPath/
-docker cp -q "composer.json" $containerPath/
-docker cp -q "composer.lock" $containerPath/
+filesPath="backup-to-restore/shopware-files"
+containerPath="shopware:$swDir"
+docker compose cp "$filesPath/public/" $containerPath/
+docker compose cp "$filesPath/custom/" $containerPath/
+docker compose cp "$filesPath/files/" $containerPath/
+docker compose cp "$filesPath/var/" $containerPath/
+docker compose cp "$filesPath/install.lock" $containerPath/
+docker compose cp "$filesPath/composer.json" $containerPath/
+docker compose cp "$filesPath/composer.lock" $containerPath/
 
-docker exec $swContainer bash -c "chown -R nginx:nginx $swDir"
-docker exec --user nginx $swContainer bash -c "chmod -R 0777 $swDir"
-docker exec --user nginx $swContainer bash -c "cd $swDir && composer install"
-docker exec --user nginx $swContainer bash -c "cd $swDir && bin/console es:reset --no-interaction"
-docker exec --user nginx $swContainer bash -c "cd $swDir && bin/console es:admin:reset --no-interaction"
-docker exec --user nginx $swContainer bash -c "cd $swDir && bin/console cache:clear:all"
-
-cd ../
+docker compose exec shopware bash -c "chown -R nginx:nginx $swDir"
+docker compose exec shopware bash -c "chmod -R 0777 $swDir"
+docker compose exec --user nginx shopware bash -c "cd $swDir && composer install --no-dev"
+docker compose exec --user nginx shopware bash -c "cd $swDir && bin/console es:reset --no-interaction"
+docker compose exec --user nginx shopware bash -c "cd $swDir && bin/console es:admin:reset --no-interaction"
+docker compose exec --user nginx shopware bash -c "cd $swDir && bin/console cache:clear:all"
 
 # restore database
-(docker exec -i $dbContainer mariadb \
+docker compose exec -T database mariadb \
   -h "$host" \
   -P "$port" \
   -u "$user" \
   -p"$sqlPassword" \
   shopware \
-) < shopware-db.sql
+  < backup-to-restore/shopware-db.sql
 
-cd ../../
-docker container restart $swContainer
+docker compose restart shopware
 
 
 ### BEGIN CLEAN UP ###

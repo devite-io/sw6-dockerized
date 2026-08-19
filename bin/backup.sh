@@ -1,22 +1,23 @@
 #!/bin/bash
 
-if [ $# -lt 3 ]; then
-  echo "Usage: $0 <shopware container> <db container> <db password> [--no-bundles]"
+if [ $# -lt 2 ]; then
+  echo "Usage: $0 <compose project path> <db password> [--no-bundles]"
   exit 1
 fi
 
 
 ### BEGIN VALIDATION ###
 
-swContainer="$1"
-dbContainer="$2"
-sqlPassword="$3"
+composeProjectPath="$(realpath "$1")"
+sqlPassword="$2"
+
+cd "$composeProjectPath"
 
 host="localhost"
 port="3306"
 user="root"
 
-(docker exec $dbContainer mariadb \
+(docker compose exec database mariadb \
   -h "$host" \
   -P "$port" \
   -u "$user" \
@@ -33,11 +34,11 @@ fi
 ### BEGIN BACKUP ###
 
 timestamp="$(date '+%Y-%m-%d_%H-%M-%S')"
-mkdir backup-$timestamp && cd backup-$timestamp
+mkdir -p backups/$timestamp
 
 # backup database
 {
-  (docker exec $dbContainer mariadb-dump \
+  (docker compose exec database mariadb-dump \
     -h "$host" \
     -P "$port" \
     -u "$user" \
@@ -56,35 +57,31 @@ mkdir backup-$timestamp && cd backup-$timestamp
     --disable-comments \
     --databases shopware \
   )
-} > shopware-db.sql
+} > backups/$timestamp/shopware-db.sql
 
 # backup Shopware
-mkdir shopware-files && cd shopware-files
+filesPath="backups/$timestamp/shopware-files"
+containerPath="shopware:/usr/share/nginx/html"
 
-containerPath="$swContainer:/usr/share/nginx/html"
-
-mkdir -p public
-docker cp -q "$containerPath/public/bundles/" public/bundles
+mkdir -p $filesPath/public/bundles $filesPath/public/media $filesPath/public/thumbnail $filesPath/files/export
+docker compose cp "$containerPath/public/bundles/." $filesPath/public/bundles/
 
 if [ "$#" -eq 4 ] && [ "$2" == "--no-bundles" ]; then
-  rm -rf public/bundles/administration
-  rm -rf public/bundles/framework
-  rm -rf public/bundles/installer
-  rm -rf public/bundles/storefront
+  rm -rf $filesPath/public/bundles/administration
+  rm -rf $filesPath/public/bundles/framework
+  rm -rf $filesPath/public/bundles/installer
+  rm -rf $filesPath/public/bundles/storefront
 fi
 
-docker cp -q "$containerPath/public/media/" public/media
-docker cp -q "$containerPath/public/thumbnail/" public/thumbnail
-docker cp -q "$containerPath/custom/" custom && rm -f custom/.htaccess
-docker cp -q "$containerPath/files/" files && rm -rf files/.htaccess files/export
-docker cp -q "$containerPath/var/" var && rm -rf var/log var/cache var/.htaccess var/theme*
-docker cp -q "$containerPath/install.lock" ./
-docker cp -q "$containerPath/composer.json" ./
-docker cp -q "$containerPath/composer.lock" ./
-
-cd ../
+docker compose cp "$containerPath/public/media/." $filesPath/public/media/
+docker compose cp "$containerPath/public/thumbnail/." $filesPath/public/thumbnail/
+docker compose cp "$containerPath/custom/." $filesPath/custom/ && rm -f $filesPath/custom/.htaccess
+docker compose cp "$containerPath/files/." $filesPath/files/ && rm -rf $filesPath/files/.htaccess $filesPath/files/export
+docker compose cp "$containerPath/var/." $filesPath/var/ && rm -rf $filesPath/var/log $filesPath/var/cache $filesPath/var/.htaccess $filesPath/var/theme*
+docker compose cp "$containerPath/install.lock" $filesPath/
+docker compose cp "$containerPath/composer.json" $filesPath/
+docker compose cp "$containerPath/composer.lock" $filesPath/
 
 # compress backup
-cd ../
-tar -czf $timestamp.tar.gz backup-$timestamp/
-rm -r backup-$timestamp/
+tar -czf backups/$timestamp.tar.gz -C backups/$timestamp/ .
+rm -r backups/$timestamp/

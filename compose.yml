@@ -1,11 +1,12 @@
 name: sw6
 services:
   shopware:
-    build: shopware-dockerized
+    build: ${REPO_DIR:-.}/shopware-dockerized
     ports:
-      - "8080:80"
+      - "80:80"
     volumes:
       - sw6-shopware-data:/usr/share/nginx/html:rw
+      - ./sw-environment:/usr/share/nginx/html/.env.prod.local:rw
     networks: [sw6-network]
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost" ]
@@ -37,12 +38,20 @@ services:
     image: opensearchproject/opensearch:latest
     restart: always
     environment:
-      discovery.type: single-node
-      plugins.security.disabled: true
-      OPENSEARCH_INITIAL_ADMIN_PASSWORD: ${OPENSEARCH_ADMIN_PASSWORD:-c3o_ZPHo!}
+      discovery.type: "single-node"
+      plugins.security.audit.type: "none"
+      plugins.security.ssl.http.enabled: "false"
+      OPENSEARCH_INITIAL_ADMIN_PASSWORD: "${OPENSEARCH_ADMIN_PASSWORD:-c3o_ZPHo!}"
+    volumes:
+      - sw6-opensearch-data:/usr/share/opensearch/data:rw
     networks: [sw6-network]
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "32m"
+        max-file: "3"
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:9200/_cat/health" ]
+      test: [ "CMD", "curl", "--fail", "--user", "admin:${OPENSEARCH_ADMIN_PASSWORD:-c3o_ZPHo!}", "http://localhost:9200/_cat/health" ]
       start_interval: 5s
       start_period: 10s
       interval: 5s
@@ -52,7 +61,7 @@ services:
     image: mariadb:lts
     restart: always
     environment:
-      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-password}
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD:-password}
     command:
       - --sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
       - --log_bin_trust_function_creators=1
@@ -84,26 +93,28 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '4.0'
+          cpus: '2.0'
     volumes:
       - sw6-database-data:/var/lib/mysql:rw
     networks: [sw6-network]
     healthcheck:
-      test: [ "CMD", "mariadb-admin" ,"ping", "-h", "localhost", "-p${MARIADB_ROOT_PASSWORD:-password}" ]
+      test: [ "CMD", "mariadb-admin" ,"ping", "-h", "localhost", "-p${DB_PASSWORD:-password}" ]
       start_interval: 3s
       start_period: 10s
       interval: 5s
       timeout: 1s
       retries: 10
   phpmyadmin:
-    image: phpmyadmin:latest
+    build: https://github.com/devite-io/phpmyadmin-dockerized.git#main
     restart: always
     environment:
-      PMA_HOST: database
-      PMA_USER: root
-      PMA_PASSWORD: ${MARIADB_ROOT_PASSWORD:-password}
+      PMA_HOST: "database"
+      PMA_USER: "root"
+      PMA_PASSWORD: "${DB_PASSWORD:-password}"
     ports:
-      - "80:80"
+      - "8080:80"
+    volumes:
+      - sw6-phpmyadmin-config:/etc/phpmyadmin:rw
     networks: [sw6-network]
     depends_on:
       database:
@@ -115,4 +126,6 @@ networks:
 
 volumes:
   sw6-shopware-data:
+  sw6-opensearch-data:
   sw6-database-data:
+  sw6-phpmyadmin-config:

@@ -2,10 +2,16 @@
 
 This is a production-ready dockerized setup for Shopware 6.
 
+## Installing Shopware
+
+```bash
+bash deploy.sh && bash ./bin/install-shopware.sh . en_GB EUR
+```
+
 ## Starting server
 
 ```bash
-docker compose up -d
+bash deploy.sh
 ```
 
 ## Stopping server
@@ -14,18 +20,12 @@ docker compose up -d
 docker compose down
 ```
 
-## Installing Shopware
-
-```bash
-bash ./bin/install-shopware.sh sw6-shopware-1 en_GB
-```
-
-## Updating Shopware
+## Updating Symfony project
 
 Set the targeted version in the `./shopware-dockerized/sw-symfony-flex/composer.json`, then run:
 
 ```bash
-bash ./bin/update-shopware.sh sw6-shopware-1
+bash ./bin/update-sw-symfony-flex.sh .
 cd ./shopware-dockerized/sw-symfony-flex
 composer recipes:update --no-interaction shopware/administration
 composer recipes:update --no-interaction shopware/core
