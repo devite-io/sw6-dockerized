@@ -59,7 +59,7 @@ RUN usermod -d /usr/share/nginx nginx \
 
 # add entrypoint scripts
 COPY includes/scripts/entrypoint.sh /entrypoint.sh
-RUN echo "#!/bin/sh\ncd /usr/share/nginx/html\nphp bin/console messenger:setup-transports\nphp bin/console dal:refresh:index --use-queue\n" > /docker-entrypoint.d/10-index-shopware.sh
+RUN printf "#!/bin/sh\ncd /usr/share/nginx/html\nsu nginx -c 'php bin/console messenger:setup-transports && php bin/console dal:refresh:index --use-queue'" > /docker-entrypoint.d/10-index-shopware.sh
 RUN chmod +x /entrypoint.sh /docker-entrypoint.d/*.sh
 
 CMD ["sh", "/entrypoint.sh"]

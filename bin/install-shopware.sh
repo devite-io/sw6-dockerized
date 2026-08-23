@@ -18,6 +18,7 @@ docker compose exec --user nginx shopware bash -c "cd $swDir && composer install
 
 # install Shopware
 docker compose exec --user nginx shopware bash -c "cd $swDir && bin/console system:install --create-database --basic-setup --shop-locale='$locale' --shop-currency='$currency' --force"
+docker compose exec shopware bash -c "chown -R nginx:nginx $swDir && chmod -R 0777 $swDir"
 docker compose restart shopware
 
 # apply patches

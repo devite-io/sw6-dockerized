@@ -66,8 +66,7 @@ docker compose cp "$filesPath/install.lock" $containerPath/
 docker compose cp "$filesPath/composer.json" $containerPath/
 docker compose cp "$filesPath/composer.lock" $containerPath/
 
-docker compose exec shopware bash -c "chown -R nginx:nginx $swDir"
-docker compose exec shopware bash -c "chmod -R 0777 $swDir"
+docker compose exec shopware bash -c "chown -R nginx:nginx $swDir && chmod -R 0777 $swDir"
 docker compose exec --user nginx shopware bash -c "cd $swDir && composer install --no-dev"
 docker compose exec --user nginx shopware bash -c "cd $swDir && bin/console es:reset --no-interaction"
 docker compose exec --user nginx shopware bash -c "cd $swDir && bin/console es:admin:reset --no-interaction"
