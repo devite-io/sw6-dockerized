@@ -14,5 +14,6 @@ cd "$composeProjectPath"
 documentsDir="/usr/share/nginx/html/vendor/shopware/core/Framework/Resources/views/documents"
 
 docker compose exec shopware bash -c "rm -rf $documentsDir/*"
-docker compose cp "$scriptDir/../document-templates" shopware:$documentsDir/
+docker compose cp "$scriptDir/../document-templates/." shopware:$documentsDir/
 docker compose exec shopware bash -c "cd $documentsDir && chown -R nginx:nginx . && chmod -R 0777 ."
+docker compose restart shopware
