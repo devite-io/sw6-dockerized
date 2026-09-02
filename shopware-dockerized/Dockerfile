@@ -30,11 +30,8 @@ RUN mv composer.phar /usr/local/bin/composer
 RUN chmod +x /usr/local/bin/composer
 
 # set up cron job for scheduled tasks
-COPY includes/cronjobs /etc/cron.d/sw-cronjobs
-RUN chmod 0644 /etc/cron.d/sw-cronjobs \
-    && crontab /etc/cron.d/sw-cronjobs \
-    && touch /var/log/sw-cronjobs.log \
-    && chown www-data:www-data /var/log/sw-cronjobs.log
+COPY --chown=root:root --chmod=0644 includes/cronjobs /etc/cron.d/sw-cronjobs
+RUN touch /var/log/sw-cronjobs.log && chown nginx:nginx /var/log/sw-cronjobs.log
 
 # set up supervisor
 COPY includes/config/supervisord.conf /etc/supervisor/supervisord.conf
@@ -59,7 +56,7 @@ RUN usermod -d /usr/share/nginx nginx \
 
 # add entrypoint scripts
 COPY includes/scripts/entrypoint.sh /entrypoint.sh
-RUN printf "#!/bin/sh\ncd /usr/share/nginx/html\nsu nginx -c 'php bin/console messenger:setup-transports && php bin/console dal:refresh:index --use-queue'" > /docker-entrypoint.d/10-index-shopware.sh
+RUN printf "#!/bin/bash\nsu nginx -c '/usr/bin/php /usr/share/nginx/html/bin/console dal:refresh:index --use-queue'" > /docker-entrypoint.d/10-index-shopware.sh
 RUN chmod +x /entrypoint.sh /docker-entrypoint.d/*.sh
 
 CMD ["sh", "/entrypoint.sh"]

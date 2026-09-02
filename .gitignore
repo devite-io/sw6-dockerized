@@ -1,3 +1,4 @@
 /.idea
 /document-templates/*
 !/document-templates/.gitkeep
+sw-environment

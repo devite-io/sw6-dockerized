@@ -1,2 +1,5 @@
-# run scheduled Shopware tasks every 5 minutes
-*/5 * * * * nginx cd /usr/share/nginx/html && /usr/bin/php bin/console scheduled-task:run --no-wait >> /var/log/run-scheduled-task.log 2>&1
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# run scheduled Shopware tasks every minute
+* * * * * nginx /usr/bin/php /usr/share/nginx/html/bin/console scheduled-task:run --no-wait --memory-limit=512M >> /var/log/sw-cronjobs.log 2>&1
