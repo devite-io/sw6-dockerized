@@ -9,8 +9,8 @@ RUN apt install -y nodejs
 
 # prepare nginx for rootless mode
 COPY includes/config/fastcgi.conf /etc/nginx/fastcgi.conf
-RUN rm -rf /etc/nginx/fastcgi_params /usr/share/nginx/html/*
-RUN chown -R nginx:nginx /var/cache/nginx /usr/share/nginx/html /etc/nginx \
+RUN rm -rf /etc/nginx/fastcgi_params /usr/share/nginx/html/* /var/log/nginx/error.log
+RUN chown -R nginx:nginx /var/cache/nginx /usr/share/nginx/html /etc/nginx /var/log/nginx \
     && chmod -R g+w /var/cache/nginx /etc/nginx
 
 # install php
